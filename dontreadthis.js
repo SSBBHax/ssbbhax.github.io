@@ -1,4 +1,3 @@
-// Mapping between goals and image paths
 const goalImageMapping = {
 	'3 Frog Rings': ['images/goals/3_frog_rings.png'],
 	'5 Candy Bags': ['images/goals/5_candy_bags.png'],
@@ -75,7 +74,7 @@ const goalImageMapping = {
 // Function to handle displaying images over the flowchart
 function displayImages() {
 	const goalsText = document.getElementById('goalsTextbox').value;
-	const goals = goalsText.split(' - ').map(goal => goal.trim());
+	const goals = goalsText.split(/ - |\n/).map(goal => goal.trim());
 
 	goals.forEach(goal => {
 		const imagePaths = goalImageMapping[goal];
